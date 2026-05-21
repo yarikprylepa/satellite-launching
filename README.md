@@ -1,2 +1,3 @@
-# satellite-launching
-Modelling Satellite Launching in Python
+# Modelling Satellite Launching
+
+Programming part of Group Project in Python
