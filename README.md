@@ -6,18 +6,18 @@ The task is to model the process in which a rocket carrying a satellite of mass 
 
 ## What this project includes
 
-1. **Parameter research**  
-   Collect realistic values for quantities such as satellite mass, rocket mass, rocket dimensions, LEO altitude, launch velocity, and atmospheric properties. [1]
-2. **Mathematical model development**  
-   Formulate equations of motion for the rocket during launch and landing, and choose suitable parameter values so the rocket can reach orbit and return safely. [1]
-3. **Solution of the model**  
-   Solve the resulting initial value problems for displacement $$x(t)$$, velocity $$v(t)$$, and mass $$M(t)$$, using analytical methods where possible and numerical methods where needed. [1]
-4. **Plots and visualisation**  
-   Produce separate plots for displacement, velocity, and mass as functions of time. If both analytical and numerical solutions are available, compare them on the same figures. [1]
-5. **Air resistance case**  
-   Where drag is included, numerical solutions may be required if analytical solutions are too difficult to obtain. [1]
-6. **Discussion of realism and limitations**  
-   Evaluate how well the mathematical model represents real rocket launching and landing, and identify factors that could improve the model. [1]
+- **Parameter research**  
+   collect realistic values for quantities such as satellite mass, rocket mass, rocket dimensions, LEO altitude, launch velocity, and atmospheric properties
+- **Mathematical model development**  
+   formulate equations of motion for the rocket during launch and landing, and choose suitable parameter values so the rocket can reach orbit and return safely
+- **Solution of the model**  
+   solve the resulting initial value problems for displacement $$x(t)$$, velocity $$v(t)$$, and mass $$M(t)$$, using analytical methods where possible and numerical methods where needed
+- **Plots and visualisation**  
+   produce separate plots for displacement, velocity, and mass as functions of time. If both analytical and numerical solutions are available, compare them on the same figures
+- **Air resistance case**  
+   where drag is included, numerical solutions may be required if analytical solutions are too difficult to obtain
+- **Discussion of realism and limitations**  
+   evaluate how well the mathematical model represents real rocket launching and landing, and identify factors that could improve the model
    
 ## What is in this repository
 - the written report;
