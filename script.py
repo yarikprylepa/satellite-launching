@@ -3,17 +3,17 @@ import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 
 #physical constants
-g = 9.81
+g = 9.8
 rho_air = 1.225
 mu_air = 1.8e-5
 R_earth = 6.371e6
 mu_earth = 3.986004418e14
 
 #chosen parameters
-H = 300e3
+H = 500e3
 ms = 2000.0
 M0 = 5.0210e5
-M_dry = 2.0e4
+M_s = 2.0e3
 u = 3500.0
 lam1 = 2000.0
 lam3 = 2000.0
@@ -48,7 +48,7 @@ def drag_force(v):
 #phase 1, powered ascent
 def phase1_rhs(t, y):
     x, v, M = y
-    if M <= M_dry + ms:
+    if M <= M_s + ms:
         thrust = 0.0
         dMdt = 0.0
     else:
@@ -64,7 +64,7 @@ reach_H.terminal = True
 reach_H.direction = 1
 
 def burnout(t, y):
-    return y[2] - (M_dry + ms)
+    return y[2] - (M_s + ms)
 burnout.terminal = True
 burnout.direction = -1
 
@@ -83,7 +83,7 @@ reach_apex.direction = -1
 #phase 3, descent
 def phase3_rhs(t, y):
     x, v, M = y
-    if M <= M_dry:
+    if M <= M_s:
         thrust = 0.0
         dMdt = 0.0
     else:
@@ -120,7 +120,7 @@ t1 = sol1.t_events[0][0]
 x1_end, v1_end, M1_end = sol1.sol(t1)
 
 M2_const = M1_end - ms
-if M2_const <= M_dry:
+if M2_const <= M_s:
     raise RuntimeError("Not enough rocket mass remains after satellite release.")
 
 #solve phase 2
@@ -300,7 +300,7 @@ plt.plot(orbit_x / 1000, orbit_y / 1000, label='Circular LEO orbit')
 plt.gca().set_aspect('equal', adjustable='box')
 plt.xlabel('x (km)')
 plt.ylabel('y (km)')
-plt.title('Idealised circular LEO orbit at 300 km altitude')
+plt.title('Idealised circular LEO orbit at 500 km altitude')
 plt.legend()
 plt.tight_layout()
 plt.show()
